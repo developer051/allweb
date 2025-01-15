@@ -8,3 +8,7 @@ def Home(request):
 
 def AboutUs(request):
     return render(request, 'company/aboutus.html')
+
+
+def ContactUs(request):
+    return render(request, 'company/contact.html')
