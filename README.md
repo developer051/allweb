@@ -1,4 +1,4 @@
-<text color=red> ## Python Django Project2025  </text>
+## <text color=red>  Python Django Project2025  </text>
 <details> Python Django Project 2025 </details>
 
 
