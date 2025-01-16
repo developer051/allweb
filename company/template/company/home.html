@@ -1,5 +1,7 @@
 {% extends 'company/base.html' %}   
 
+{% load static %}
+
 {% block title %} สวัสดีจ้าา ยินดีต้อนรับสู่เว็บ {% endblock title %}
 
 {% block content %}
@@ -11,6 +13,9 @@
       <p class="fs-5 text-body-secondary">บ้านหลังเล็กๆที่อบอุ่น  ดูแลเหมือนครอบครัว  ติวสอบเข้ามหาวิทยาลัย </p>
       
     </div>
+
+<img src="{% static 'image/dataeng.png' %}" alt="Dataeng image">
+
    
 <! –– ส่วนแสดงผลข้อมูลจากฐานข้อมูล ––>
     <center>
@@ -20,6 +25,7 @@
           รายละเอียด: {{ pd.description }}<br>
           ราคา: {{pd.price}} บาท<br>
           เหลือในคลัง: {{pd.quantity}}<br>
+
         </p>
         <hr>
       {% endfor %}
