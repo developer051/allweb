@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse  #<< เพิ่มใหม่   เพิ่อโชว์ข้อความ HelloWorld
-
+from .models import Product
 
 def Home(request):
-    return render(request, 'company/home.html')
+    allproduct = Product.objects.all()   #  SELECT * FROM Product
+    context = {'allproduct': allproduct}
+    return render(request, 'company/home.html', context)
 
 
 def AboutUs(request):

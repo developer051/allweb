@@ -14,3 +14,16 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)   #null=True, blank=True คือ ให้มันเป็นค่าว่างได้ ไม่ต้องกรอกก็ได้
     price = models.DecimalField(max_digits=5, decimal_places=2 ,null=True,blank=True) #decimal คือ ตัวเลขทศนิยม  , decimal_places=2 คือ จำนวนทศนิยม 2 ตำแหน่ง , null=True,blank=True คือ ให้มันเป็นค่าว่างได้ ไม่ต้องกรอกก็ได้
     quantity = models.IntegerField(null=True,blank=True) #null=True, blank=True คือ ให้มันเป็นค่าว่างได้ ไม่ต้องกรอกก็ได้
+
+
+    def __str__(self):
+        return self.title
+    
+
+
+'''
+รัน 2 คำสั่งนี้เพื่อสร้างตารางในฐานข้อมูลทุกครั้งที่สร้าง model ใหม่
+
+python manage.py makemigrations
+python manage.py migrate
+'''
