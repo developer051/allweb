@@ -11,14 +11,19 @@ Product
 
 class Product(models.Model):
     title = models.CharField(max_length=100) 
-    description = models.TextField(null=True, blank=True)   #null=True, blank=True คือ ให้มันเป็นค่าว่างได้ ไม่ต้องกรอกก็ได้
-    price = models.DecimalField(max_digits=5, decimal_places=2 ,null=True,blank=True) #decimal คือ ตัวเลขทศนิยม  , decimal_places=2 คือ จำนวนทศนิยม 2 ตำแหน่ง , null=True,blank=True คือ ให้มันเป็นค่าว่างได้ ไม่ต้องกรอกก็ได้
-    quantity = models.IntegerField(null=True,blank=True) #null=True, blank=True คือ ให้มันเป็นค่าว่างได้ ไม่ต้องกรอกก็ได้
+    description = models.TextField(null=True, blank=True)  
+    price = models.DecimalField(max_digits=5, decimal_places=2 ,null=True,blank=True) 
+    quantity = models.IntegerField(default=1,null=True,blank=True)
+    instock = models.BooleanField(default=True)
 
 
     def __str__(self):
         return self.title
     
+
+
+
+
 
 
 '''
