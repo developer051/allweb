@@ -57,7 +57,7 @@ ROOT_URLCONF = 'website_port.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'company/template'],   #<< บอกที่อยู่ templete
+        'DIRS': [ BASE_DIR / 'company/template'],   #<< บอกที่อยู่ templete  คือ  /home/engdev/website_port/company/template
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'website_port.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',           # /home/engdev/website_port/db.sqlite3
     }
 }
 
@@ -122,7 +122,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    "/home/engdev/website_port/",
+]
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#print('BASE_DIR:',BASE_DIR)

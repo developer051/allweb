@@ -1,14 +1,34 @@
 {% extends 'company/base.html' %}   
 
-{% block title %} ข้อมูลติดต่อ {% endblock title %}
+{% block title %} ติดต่อเรา {% endblock title %}
 
 {% block content %}
 
-<h1>ติดต่อเรา</h1><br>
+<center>
+    <h1>ติดต่อเรา</h1><br>
+</center>
+    <form method="POST">
+        {% csrf_token %}   <!-- ใส่ token ป้องกันการโจมตีจาก hacker ถ้าไม่ใส่จะ submit form ไม่ได้ -->
+        
+        <div class="form-group">
+          <label for="title">หัวข้อที่ต้องการติดต่อ:</label>
+          <input type="text" class="form-control" id="title" name="title">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="email">อีเมล:</label>
+          <input type="text" class="form-control" id="email" name="email">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="detail">รายละเอียด:</label>
+            <textarea class="form-control" rows="5" id="detail" name="detail"></textarea> <!--เพิ่ม name='detail'-->
+        </div>
+    <br>
+        <button type="submit" class="btn btn-primary">ส่งข้อความไปหาแอดมิน</button>
+      </form>
+   
 
-<p>
-    ที่อยู่: 123 ถนน สุขุมวิท แขวง คลองเตย เขต คลองเตย กรุงเทพมหานคร 10110
-</p>
 
 
 {% endblock content %}

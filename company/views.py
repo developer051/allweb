@@ -13,4 +13,14 @@ def AboutUs(request):
 
 
 def ContactUs(request):
+    if request.method == 'POST':
+        data = request.POST.copy()
+        title = data.get('title')
+        email = data.get('email')
+        detail = data.get('detail')
+        print(title)
+        print(email)
+        print(detail)
+        print('--------------------')
+
     return render(request, 'company/contact.html')
