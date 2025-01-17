@@ -22,5 +22,11 @@ def ContactUs(request):
         print(email)
         print(detail)
         print('--------------------')
+        # เมื่อมีการส่งข้อมูลมาจาก form ให้ทำการบันทึกลงใน database
+        newrecord = ContactList()
+        newrecord.title = title
+        newrecord.email = email
+        newrecord.detail = detail
+        newrecord.save()
 
     return render(request, 'company/contact.html')

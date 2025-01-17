@@ -15,7 +15,17 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2 ,null=True,blank=True) 
     quantity = models.IntegerField(default=1,null=True,blank=True)
     instock = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.title
+    
 
+
+class ContactList(models.Model):
+    title = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    detail = models.TextField(null=True, blank=True)
+    complete = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
