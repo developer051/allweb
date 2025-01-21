@@ -4,7 +4,7 @@ from .models import *
 
 def Home(request):
     allproduct = Product.objects.all()   #  SELECT * FROM Product
-    context = {'allproduct': allproduct}
+    context = {'allproduct': allproduct}   # contect คือตัวแปรที่ส่งไปที่ template
     return render(request, 'company/home.html', context)
 
 
@@ -13,6 +13,9 @@ def AboutUs(request):
 
 
 def ContactUs(request):
+
+    context = {}  #  สิ่งที่จะแนบไปกับ template
+
     if request.method == 'POST':
         data = request.POST.copy()
         title = data.get('title')
@@ -28,5 +31,6 @@ def ContactUs(request):
         newrecord.email = email
         newrecord.detail = detail
         newrecord.save()
+        context['message'] = 'บันทึกข้อมูลเรียบร้อยแล้ว'   # แจ้งเมื่อทำการบันทึกข้อมูลเรียบร้อยแล้ว ต้องมีบรรทัด 17 ด้วย
 
-    return render(request, 'company/contact.html')
+    return render(request, 'company/contact.html',context)  # follow line 17,34   

@@ -4,30 +4,37 @@
 
 {% block content %}
 
-<left>
+  <left>
     <h3><u>Contact EngDev</h3></u><br>
-</left>
-    <form method="POST">
-        {% csrf_token %}   <!-- ใส่ token ป้องกันการโจมตีจาก hacker ถ้าไม่ใส่จะ submit form ไม่ได้ -->
-        
-        <div class="form-group">
-          <label for="title">หัวข้อที่ต้องการติดต่อ:</label>
-          <input type="text" class="form-control" id="title" name="title">
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="email">อีเมล:</label>
-          <input type="text" class="form-control" id="email" name="email">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="detail">รายละเอียด:</label>
-            <textarea class="form-control" rows="5" id="detail" name="detail"></textarea> <!--เพิ่ม name='detail'-->
-        </div>
-    <br>
-        <button type="submit" class="btn btn-primary">ส่งข้อความไปหาแอดมิน</button>
-      </form>
-   
+  </left>
+
+{% if message %}
+    <h3>{{ message }}</h3>
+
+{% else %}
+          <form method="POST">
+              {% csrf_token %}   <!-- ใส่ token ป้องกันการโจมตีจาก hacker ถ้าไม่ใส่จะ submit form ไม่ได้ -->
+              
+              <div class="form-group">
+                <label for="title">หัวข้อที่ต้องการติดต่อ:</label>
+                <input type="text" class="form-control" id="title" name="title">
+              </div>
+                    <br>
+              <div class="form-group">
+                <label for="email">อีเมล:</label>
+                <input type="text" class="form-control" id="email" name="email">
+              </div>
+                    <br>
+              <div class="form-group">
+                  <label for="detail">รายละเอียด:</label>
+                  <textarea class="form-control" rows="5" id="detail" name="detail"></textarea> <!--เพิ่ม name='detail'-->
+              </div>
+                    <br>
+              <button type="submit" class="btn btn-primary">ส่งข้อความไปหาแอดมิน</button>
+
+          </form>
+
+{% endif %} 
 
 
 
