@@ -4,11 +4,24 @@
 
 {% block content %}
 
+{% load static %}  <!-- เพื่มเข้ามาเอง -->
+
 <h1>เกี่ยวกับเรา</h1><br>
 
-<p>
-    เราคือบริษัทที่มีประสบการณ์มากกว่า 10 ปีในการให้บริการด้าน IT และ Software Development
-</p>
 
+    <div class="container mt-3">
+        <h2>Data Engineer</h2>
+        <p>ลองพิมพ์:</p>
+        <div class="card" style="width:400px">
+          <img class="card-img-top" src="{% static 'image/dataeng.png' %}" alt="Data Engineer" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">Supachai.o</h4>
+            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+          </div>
+        <br
+
+        </div >
+    </div>
 
 {% endblock content %}
